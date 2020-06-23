@@ -1,0 +1,52 @@
+:root{
+    --color_barra: #f3f3f3;
+    --rojo: #4A5559;
+    --azul: #247cc0;
+    --verde: #2ea268;
+}
+input[type="file"]{
+    margin: 0 0 15px;
+    padding: 1px 1%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.principal{
+    width: 100%;
+    margin: 0 auto;
+    padding: 3% 0 6% 0;
+    clear: both;
+}
+.barra{
+    background-color: var(--color_barra);
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, .2);
+    height: 25px;
+}
+
+.cancel{
+    background-color: var(--rojo) !important;
+}
+
+.barra_carga{
+    background-color: var(--azul) !important;
+}
+.barra_verde{
+    background-color: var(--verde) !important;
+}
+.barra_roja{
+    background-color: var(--rojo) !important;
+}
+
+
+.form_subir{
+    margin: 1.5% 0;
+    padding: 2%;
+}
+
+#barra_estado span{
+    color: #fff;
+    font-weight: 300;
+    line-height: 25px;
+}

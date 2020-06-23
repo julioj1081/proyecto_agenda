@@ -1,0 +1,57 @@
+
+/**
+ *
+ * @author julio
+ */
+import java.applet.AudioClip;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+public class ClaseThread extends Thread {
+
+    FantasmaR fantasma;
+
+
+    Graphics g;
+
+    public ClaseThread(FantasmaR fantasma,Graphics g) {
+        this.fantasma = fantasma;
+       
+
+        this.g = g;
+    }
+
+    public synchronized void run() {
+
+    
+     
+            //
+            fantasma.dibuja(g);
+            
+
+            int movimiento = (int) (Math.random() * 4) + 1;
+            switch (movimiento) {
+                case 1:
+                    fantasma.Arriba();
+                    
+                    break;
+                case 2:
+                    fantasma.Izquierda();
+                    
+                    break;
+                case 3:
+                    fantasma.Derecha();
+                   
+                    break;
+                case 4:
+                    fantasma.Abajo();
+                
+                    break;
+            }
+       
+    }
+}

@@ -1,0 +1,42 @@
+<div class="form-notas">
+                <h3>Agrega una nueva nota</h3>
+                <br>
+                <div class="principal">
+                    <!--js pocision 0 -->
+                    <form action="" id="form_subir">
+                        <div class="form-1-2">
+                            <label for="">Titulo nota</label>
+                            <input type="text" class="tarea" id="tarea" name="tarea">
+                            <label for=""><span style="font-weight:bold;"> Enviar a </span></label>
+                            <select name="" id="">
+                                <?php
+                                    $conexiion2 = new mysqli("localhost","root","","agenda");
+                                    $resultado = mysqli_query($conexiion2, "SELECT * FROM usuarios WHERE seccion='$seccion'");
+                                    while($row = mysqli_fetch_array($resultado)){
+                                        $correo_usuario = $row[3];
+                                        echo"<option value='destinatario'>$correo_usuario</option>";
+                                    } 
+                                ?>
+                            </select>
+                            <br>
+                            <label for="">Descripcion de nota</label>
+                            <textarea id="mytextarea" style="height:150px"></textarea>
+                            <br>
+                            <label for="">Archivo a subir</label>
+                            <input type="file" name="archivo" required>
+                        </div>
+                        <!--js pocision 1 -->
+                        <!--BARRA DE CARGA-->
+                        <div class="barra">
+                            <div class="barra_carga" id="barra_estado">
+                                <span></span>
+                            </div>
+                        </div>
+                        <!-- js pocision 2 -->
+                        <div class="acciones">
+                            <input type="submit" class="btn btn-primary" class="btn" value="Enviar">
+                            <input type="button" class="btn btn-danger" class="cancel" id="cancelar" value="Cancelar">
+                        </div>
+                    </form>
+                 </div>
+                </div>
